@@ -1,0 +1,4 @@
+
+>> reconfigurar user.name e user.email
+git config --global --unset user.email
+git config --global --unset user.name

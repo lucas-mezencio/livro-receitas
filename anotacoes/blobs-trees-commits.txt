@@ -1,0 +1,30 @@
+blobs, trees, commits
+
+>blobs:
+ echo 'conteudo' | git hash-object --stdin
+
+ echo -e 'conteudo' | openssl sha1
+ 
+geração de chave diferente, pois os objetos do git, os blobs, contêm metadados
+	Blob  		tamanho
+	\0
+	conteudo
+
+echo -e 'blob 9\0conteudo' | openssl sha1
+
+>trees:
+	tree	tamanho
+	\0
+	blob sa4d8s texto.txt
+	
+
+>commits:
+	commit 	tamanho
+	tree	chave
+	parente	chave
+	autor	nome
+	mensagem "msg"
+	timestamp
+	
+o sha1 desse commit é o hash de toda essa informação
+
